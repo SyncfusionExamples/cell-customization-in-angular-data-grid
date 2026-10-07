@@ -1,0 +1,41 @@
+<div class="grid-container">
+ 
+  <ejs-grid
+    #grid
+    [dataSource]="data"
+    [allowPaging]="true"
+    [pageSettings]="pageSettings"
+    [selectionSettings]="selectionOptions"
+    (queryCellInfo)="customizeCell($event)"
+    (dataBound)="dataBound()">
+ 
+  <e-columns>
+      <e-column headerText='Employee Image' width='100' textAlign='Center'>
+        <ng-template #template let-data>
+         <div class="image">
+          <img src="https://ej2.syncfusion.com/angular/demos/assets/grid/images/{{data.EmployeeID}}.png" 
+          alt="{{data.EmployeeID}}" width="50" height="50"/>
+         </div>
+        </ng-template>
+      </e-column>
+      <e-column headerText="Subscription" width="120">
+      <ng-template #template let-data>
+        @if (data.Freight > 100) {
+         <span>Platinum</span>
+        } @else if (data.Freight > 75) {
+         <span>Gold</span>
+        } @else {
+          <span>Silver</span>
+        }
+      </ng-template>
+      </e-column>
+      <e-column field='OrderID' headerText='Order ID' textAlign='right' width=90 isPrimaryKey='true'></e-column>
+      <e-column field='CustomerID' headerText='Customer ID' width=70 
+      [customAttributes]="{class:'custom-css'}"></e-column>
+      <e-column field='Freight' headerText='Freight' textAlign='right' format='C2' width=70></e-column>
+      <e-column field='OrderDate' headerText='Order Date' textAlign='right' format='yMd' width=120></e-column>
+      <e-column field='ShipCountry' headerText='Ship Country' width=120></e-column>
+    </e-columns>
+  </ejs-grid>
+ 
+</div>

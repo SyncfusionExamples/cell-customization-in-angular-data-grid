@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+ 
+.grid-container {
+    width: 70%;
+    margin: 120px auto;
+}
+
+.e-grid td.e-cellselectionbackground {
+    background: #9ac5ee;
+    font-style: italic;
+}
+
+.below-30 {
+    background-color: #f8d7da;
+}
+
+.above-30{
+    background-color: #d1fae5;
+}
+
+.e-grid td.custom-css {
+    background-color: #dff0d8;
+    color: #075985;
+}
+
+
+
+
